@@ -1,0 +1,51 @@
+version: '3.8'
+
+networks:
+  laravel_network: # Definir la red personalizada
+    driver: bridge
+
+services:
+  app:
+    build: .
+    container_name: laravel_app
+    restart: always
+    volumes:
+      - .:/var/www
+    depends_on:
+      - db
+    env_file:
+      - .env
+    networks:
+      - laravel_network  # Conectar Laravel a la red
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf  # <- Asegúrate de que este archivo existe
+    depends_on:
+      - app
+    networks:
+      - laravel_network
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - laravel_network  # Conectar PostgreSQL a la red
+
+volumes:
+  pgdata:
