@@ -15,16 +15,16 @@ interface AuthContextType {
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 
-
-
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<any>(null);
-  const isAuthenticated = !!user;
-
+  const isAuthenticated = !!user
+  
   useEffect(() => {
-    getUser()
-      .then(setUser)
-      .catch(() => setUser(null));
+    const fetcher = async ()=>{
+      const data = await getUser()
+      setUser(data)
+    }
+    fetcher() 
   }, []);
 
   const logout = () => {

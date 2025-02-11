@@ -1,6 +1,9 @@
 import Header from "../../components/ui/Header";
+import { useAuth } from "../../hooks/useAuth";
 
 const Home = () => {
+    const { isAuthenticated } = useAuth();
+  
   return (
     <div>
       <Header />
@@ -10,6 +13,7 @@ const Home = () => {
           Una aplicación moderna con autenticación segura basada en JWT. 
           Regístrate y accede a funcionalidades avanzadas.
         </p>
+        {isAuthenticated ?? 
         <div className="mt-6 space-x-4">
           <a href="/login" className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-700">
             Iniciar Sesión
@@ -17,7 +21,7 @@ const Home = () => {
           <a href="/register" className="px-6 py-3 bg-green-500 text-white rounded-lg shadow hover:bg-green-700">
             Registrarse
           </a>
-        </div>
+        </div>}
       </div>
     </div>
   );
