@@ -16,10 +16,8 @@ services:
       - ./laravel-api-rest:/var/www
     depends_on:
       - db
-    environment:
-      DB_DATABASE: ${DB_DATABASE}
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
+    env_file:
+      - ./laravel-api-rest/.env
     networks:
       - laravel_network
     entrypoint: ['/bin/sh', '-c']
@@ -34,6 +32,8 @@ services:
       dockerfile: Dockerfile.dev
     container_name: react_frontend
     restart: always
+    env_file:
+      - ./react-client/.env
     volumes:
       - ./react-client:/app
       - /app/node_modules
