@@ -30,12 +30,12 @@ services:
         php artisan serve --host=0.0.0.0 --port=8000
   frontend:
     build:
-      context: ./laravel-api-client
+      context: ./react-client
       dockerfile: Dockerfile.dev
     container_name: react_frontend
     restart: always
     volumes:
-      - ./laravel-api-client:/app
+      - ./react-client:/app
       - /app/node_modules
     command: ["yarn", "dev", "--host"] 
     depends_on:
