@@ -9,9 +9,7 @@ services:
     build:
       context: ./laravel-api-rest
       dockerfile: Dockerfile.dev
-    container_name: backend
-    ports:
-      - 8000:8000
+    container_name: laravel_backend
     volumes:
       - ./laravel-api-rest:/var/www
     depends_on:
