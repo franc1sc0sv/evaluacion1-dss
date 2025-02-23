@@ -148,7 +148,9 @@ volumes:
 1. **Crear archivo `.env`**
 
    Crea un archivo `.env` en la raíz del proyecto con las variables de entorno necesarias, este archivo se
-    encuentra en el proyecto con el nombre `.env.example` que es una plantilla, cambia el nombre a `.env`:
+    encuentra en el proyecto con el nombre `.env.example` que es una plantilla, cambia el nombre a `.env`.
+
+    El siguiente solo es un ejemplo, en el archivo `.env.example` encontrarás todas las variables de entorno que deberás copiar.
 
    ```env
    DB_DATABASE=laravel_db
