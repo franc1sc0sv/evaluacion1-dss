@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: laravel-backend
-          image: evaluacion1-dss-backend:latest
+          image: christiangonzalez33/evaluacion1-dss-backend:latest
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
