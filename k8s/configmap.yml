@@ -63,7 +63,7 @@ data:
 
   # 🗄️ Base de Datos - PostgreSQL
   DB_CONNECTION: "pgsql"
-  DB_HOST: "db"
+  DB_HOST: "postgres-service"
   DB_PORT: "5432"
   DB_DATABASE: "laravel_db"
 
