@@ -2,7 +2,7 @@
 
 Este proyecto consiste en una aplicación web con un backend en **Laravel**, un frontend en **React**, un servidor **Nginx** como proxy inverso, y una base de datos **PostgreSQL**. Todo el sistema se despliega en un clúster de Kubernetes, utilizando balanceo de carga y escalado horizontal para garantizar alta disponibilidad y escalabilidad.
 
-## 📌   Requisitos Previos
+## 📌 Requisitos Previos
 
 
 Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
