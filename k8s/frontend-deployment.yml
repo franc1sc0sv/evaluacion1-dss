@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: react-frontend
-          image: evaluacion1-dss-frontend:latest
+          image: christiangonzalez33/evaluacion1-dss-frontend:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: VITE_API_URL
