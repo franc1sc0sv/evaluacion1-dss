@@ -1,4 +1,4 @@
-# Documentación del Proyecto: Despliegue de una Aplicación con Laravel, React, Nginx y Kubernetes
+# Documentación del Proyecto: Despliegue de una Aplicación con Laravel, React, Nginx y Kubernetes.
 
 Este proyecto consiste en una aplicación web con un backend en **Laravel**, un frontend en **React**, un servidor **Nginx** como proxy inverso, y una base de datos **PostgreSQL**. Todo el sistema se despliega en un clúster de Kubernetes, utilizando balanceo de carga y escalado horizontal para garantizar alta disponibilidad y escalabilidad.
 
@@ -24,42 +24,42 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 proyecto/
 ├── k8s/                           # Configuraciones de Kubernetes
 │   ├── backend-deployment.yml     # Deployment del backend
-│   ├── backend-pvc.yml           # Volumen persistente backend
-│   ├── backend-service.yml       # Servicio del backend
-│   ├── configmap.yml            # Variables de configuración
-│   ├── db-deployment.yml        # Deployment de PostgreSQL
-│   ├── db-pvc.yml              # Volumen persistente DB
-│   ├── db-service.yml          # Servicio de la base de datos
-│   ├── frontend-deployment.yml # Deployment del frontend
-│   ├── frontend-service.yml    # Servicio del frontend
-│   ├── hpa-backend.yml        # Autoescalado backend
-│   ├── hpa-frontend.yml       # Autoescalado frontend
-│   ├── nginx-config.yml       # Configuración de Nginx
-│   ├── nginx-deployment.yml   # Deployment de Nginx
-│   └── nginx-service.yml      # Servicio de Nginx
+│   ├── backend-pvc.yml            # Volumen persistente backend
+│   ├── backend-service.yml        # Servicio del backend
+│   ├── configmap.yml              # Variables de configuración
+│   ├── db-deployment.yml          # Deployment de PostgreSQL
+│   ├── db-pvc.yml                 # Volumen persistente DB
+│   ├── db-service.yml             # Servicio de la base de datos
+│   ├── frontend-deployment.yml    # Deployment del frontend
+│   ├── frontend-service.yml       # Servicio del frontend
+│   ├── hpa-backend.yml            # Autoescalado backend
+│   ├── hpa-frontend.yml           # Autoescalado frontend
+│   ├── nginx-config.yml           # Configuración de Nginx
+│   ├── nginx-deployment.yml       # Deployment de Nginx
+│   └── nginx-service.yml          # Servicio de Nginx
 │
-├── laravel-api-rest/          # Backend Laravel
-│   ├── app/                  # Lógica de la aplicación
+├── laravel-api-rest/       # Backend Laravel
+│   ├── app/                # Lógica de la aplicación
 │   ├── config/             # Configuraciones
-│   ├── database/          # Migraciones y seeders
-│   ├── routes/           # Definición de rutas API
-│   ├── tests/           # Tests unitarios y de integración
-│   └── Dockerfile.dev   # Dockerfile para desarrollo
+│   ├── database/           # Migraciones y seeders
+│   ├── routes/             # Definición de rutas API
+│   ├── tests/              # Tests unitarios y de integración
+│   └── Dockerfile.dev      # Dockerfile para desarrollo
 │
 ├── nginx/                # Configuración de Nginx
-│   └── default.dev.conf # Configuración para desarrollo
+│   └── default.dev.conf  # Configuración para desarrollo
 │
 ├── react-client/        # Frontend React
-│   ├── src/           # Código fuente
-│   ├── public/       # Archivos estáticos
+│   ├── src/             # Código fuente
+│   ├── public/          # Archivos estáticos
 │   └── Dockerfile.dev # Dockerfile para desarrollo
 │
 ├── .env                # Variables de entorno
-├── .env.example       # Plantilla de variables de entorno
-└── docker-compose.yml # Configuración de Docker Compose
+├── .env.example        # Plantilla de variables de entorno
+└── docker-compose.yml  # Configuración de Docker Compose
 ```
 
-## 1. Construir y Levantar los Contenedores con Docker Compose
+## 1. Construir y Levantar los Contenedores con Docker Compose.
 
 Antes de desplegar en Kubernetes, es recomendable probar la aplicación localmente usando Docker Compose.
 
