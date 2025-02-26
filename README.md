@@ -1,8 +1,9 @@
-#🚀 Documentación del Proyecto: Despliegue de una Aplicación con Laravel, React, Nginx y Kubernetes.
+# 🚀 Documentación del Proyecto: Despliegue de una Aplicación con Laravel, React, Nginx y Kubernetes.
 
 Este proyecto consiste en una aplicación web con un backend en **Laravel**, un frontend en **React**, un servidor **Nginx** como proxy inverso, y una base de datos **PostgreSQL**. Todo el sistema se despliega en un clúster de Kubernetes, utilizando balanceo de carga y escalado horizontal para garantizar alta disponibilidad y escalabilidad.
 
-📌 ## Requisitos Previos
+## 📌   Requisitos Previos
+
 
 Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 
@@ -18,7 +19,7 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas:
 6. **PHP** (opcional): Para desarrollar el backend en Laravel
 
 
-📂## Estructura del Proyecto
+## 📂 Estructura del Proyecto
 
 ```
 proyecto/
@@ -59,7 +60,7 @@ proyecto/
 └── docker-compose.yml  # Configuración de Docker Compose
 ```
 
-🐳## 1. Construir y Levantar los Contenedores con Docker Compose.
+## 🐳 1. Construir y Levantar los Contenedores con Docker Compose.
 
 Antes de desplegar en Kubernetes, es recomendable probar la aplicación localmente usando Docker Compose.
 
@@ -143,7 +144,7 @@ volumes:
   pgdata:
 ```
 
-🚀### 1.2 Construir y Levantar los Contenedores
+### 🚀 1.2 Construir y Levantar los Contenedores
 
 1. **Crear archivo `.env`**
 
@@ -174,11 +175,11 @@ volumes:
    - Abre tu navegador y visita `http://localhost:8080`
    - Verifica que el frontend y el backend estén funcionando correctamente
 
-☸️## 2. Despliegue en Kubernetes
+## ☸️ 2. Despliegue en Kubernetes
 
 Una vez que hayas probado la aplicación localmente con Docker Compose, puedes desplegarla en Kubernetes.
 
-📦### 2.1 Construir las Imágenes en Minikube
+### 📦 2.1 Construir las Imágenes en Minikube
 
 1. **Conectar al Docker daemon de Minikube**
 
@@ -231,9 +232,9 @@ Una vez que hayas probado la aplicación localmente con Docker Compose, puedes d
 
 
 
-⚖️## 3. Balanceo de Carga y Escalado Horizontal
+## ⚖️ 3. Balanceo de Carga y Escalado Horizontal
 
-🔀 ### 3.1 Balanceo de Carga
+### 🔀 3.1 Balanceo de Carga
 
 El balanceo de carga en Kubernetes se maneja a través de **Nginx**, que distribuye el tráfico entre las distintas réplicas de los pods. Kubernetes usa un **Service** de tipo `LoadBalancer` o `ClusterIP`, dependiendo del entorno, para gestionar el tráfico entrante y garantizar que las peticiones sean redirigidas correctamente a los pods disponibles.
 
@@ -242,7 +243,7 @@ El balanceo de carga en Kubernetes se maneja a través de **Nginx**, que distrib
 - `nginx-service` redirige las solicitudes al backend y frontend, distribuyéndolas equitativamente entre las réplicas disponibles.
 - Kubernetes usa un algoritmo de round-robin o least connections para distribuir las peticiones eficientemente.
 
-📈### 3.2 Escalado Horizontal
+### 📈 3.2 Escalado Horizontal
 
 El escalado horizontal se gestiona con el **Horizontal Pod Autoscaler (HPA)**, que ajusta automáticamente el número de pods en función del consumo de CPU y memoria.
 
@@ -276,6 +277,6 @@ Este sistema garantiza que la aplicación pueda manejar grandes volúmenes de tr
 
 
 
-🎯## 4. Conclusión
+## 🎯 4. Conclusión
 
 Este proyecto demuestra cómo desplegar una aplicación con Laravel, React, Nginx y PostgreSQL en un entorno de Kubernetes, utilizando balanceo de carga y escalado horizontal para garantizar alta disponibilidad y escalabilidad. La documentación proporcionada cubre todos los aspectos necesarios para replicar el proyecto y entender su funcionamiento.
